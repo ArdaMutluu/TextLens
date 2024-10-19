@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Text Lens - Analyze Your Document</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="note.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- Main Content Area -->
+            <div class="col-md-8 my-4">
+                <div class="card mb-4">
+                    <h2 class="card-header" id="fileName">Document Title</h2>
+                    <div class="card-body">
+                        <div class="displayBox scroll-box" id="fileContent">
+                            Select a file to upload.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- SideBar Content -->
+            <div class="col-md-4">
+                <!-- Upload File Widget -->
+                <div class="card my-4">
+                    <h5 class="card-header">Upload File</h5>
+                    <div class="card-body">
+                        <input type="file" id="fileInput" class="form-control mb-2">
+                        <button class="btn btn-secondary flex btn-block" onclick="processFile()">Upload and Analyze</button>
+                    </div>
+                </div>
+                <!-- Search Widget -->
+                <div class="card my-4">
+                    <h5 class="card-header">Search</h5>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="keyword" placeholder="Search for...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary" type="button" onclick="performSearch()">Search</button>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-footer" id="searchstat"></div>
+                </div>
+                <!-- Most Used Words -->
+                <div class="card my-4">
+                    <h5 class="card-header">Most Used Words</h5>
+                    <div class="card-body">
+                        <ul class="list-unstyled mb-0" id="mostUsed"></ul>
+                    </div>
+                </div>
+                <!-- Least Used Words -->
+                <div class="card my-4">
+                    <h5 class="card-header">Least Used Words</h5>
+                    <div class="card-body">
+                        <ul class="list-unstyled mb-0" id="leastUsed"></ul>
+                    </div>
+                </div>
+                <!-- Document Stats -->
+                <div class="card my-4">
+                    <h5 class="card-header">Document Stats</h5>
+                    <div class="card-body">
+                        <ul class="list-unstyled mb-0">
+                            <li id="docLength"></li>
+                            <li id="wordCount"></li>
+                            <li id="charCount"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container my-4 row col-md-12">
+               
+                    <div class="alert alert-info">
+                        <strong>Welcome!</strong> This page allows you to upload text or PDF, view the content, and analyze it. You can search for specific words, see the most and least used words, and view general document statistics.
+                    </div>
+                 
+        </div>
+    </div>
+
+   
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

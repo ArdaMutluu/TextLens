@@ -1,0 +1,239 @@
+
+html, body {
+    height: 100%; 
+    margin: 0; 
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(120deg, rgba(108, 172, 228, 0.3), rgba(255, 179, 71, 0.3)); 
+    background-attachment: fixed; /* Fix background during scroll */
+    color: #333333;
+    box-sizing: border-box;
+}
+
+
+body {
+    min-height: 100vh; /* Ensure body extends full height of viewport */
+    padding: 20px 0; /* Padding at top and bottom for consistent spacing */
+}
+
+
+.container {
+    padding: 20px; /* Inner padding for the container */
+    margin: 0 auto; /* Center the container */
+}
+
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px; /* Space below each card */
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+h2, h5 {
+    font-weight: bold;
+    color: #0056b3; /* Coherent heading color */
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(108, 172, 228, 0.15); /* Optional: Lighter color for the footer */
+    color: #0056b3;
+    margin-top: auto; /* Ensures the footer stays at the bottom if needed */
+}
+
+
+
+.card-header {
+    background-color: #0056b3; /* Primary color */
+    color: white;
+    font-size: 1.5rem;
+    padding: 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    position: relative;
+}
+
+.card-header::before {
+    font-family: "FontAwesome";
+    font-size: 1.75rem;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.card-body {
+    padding: 20px;
+    background-color: #ffffff;
+    color: #555;
+}
+
+.scroll-box {
+    max-height: 250px;
+    overflow-y: auto;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #f4f6f8;
+}
+
+.input-group {
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+input.form-control {
+    border-radius: 50px;
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease;
+}
+
+input.form-control:focus {
+    border-color: #6cace4; /* Secondary color */
+    box-shadow: 0 0 10px rgba(108, 172, 228, 0.3);
+}
+
+.btn-secondary {
+    background-color: #ffb347; /* Accent color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #ffa23a; /* Slightly darker shade of accent color */
+    transform: scale(1.05);
+}
+
+
+ul.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+ul.list-unstyled li {
+    padding: 8px 0;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+ul.list-unstyled li a {
+    color: #0056b3; /* Primary color for links */
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+ul.list-unstyled li a:hover {
+    text-decoration: underline;
+}
+
+ul.list-unstyled li a::before {
+    content: "\f0c1"; /* Link icon from FontAwesome */
+    font-family: "FontAwesome";
+    color: #6cace4; /* Secondary color for icons */
+    margin-right: 10px;
+}
+
+/* Sidebar Widget Titles */
+.card-header {
+    background-color: #0056b3;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.card.my-4 {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.card.my-4::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px 0 0 15px;
+}
+
+.card-header::after {
+    content: "\f007"; /* FontAwesome user icon */
+    font-family: "FontAwesome";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.card-footer {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+body::before {
+    content: "";
+    background: linear-gradient(120deg, rgba(108, 172, 228, 0.2), rgba(255, 179, 71, 0.2));
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.card:hover::after {
+    animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .scroll-box {
+        max-height: 200px;
+    }
+
+    input.form-control {
+        padding: 12px;
+    }
+
+    .btn-secondary {
+        padding: 8px 15px;
+    }
+
+    h2, h5 {
+        font-size: 1.3rem;
+    }
+}
+
